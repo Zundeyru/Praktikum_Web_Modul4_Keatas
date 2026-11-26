@@ -1,0 +1,540 @@
+{
+  "info": {
+    "_postman_id": "065a4c19-0d9f-41c9-a96e-7cefa871aabb",
+    "name": "FlipPlay API - Modul 4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58639061",
+    "_collection_link": "https://go.postman.co/collection/58639061-065a4c19-0d9f-41c9-a96e-7cefa871aabb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "A. Media (CRUD)",
+      "item": [
+        {
+          "name": "A6 - POST tambah anime",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"anime\",\r\n  \"title\": \"Shangri-La Frontier\",\r\n  \"release_year\": 2023,\r\n  \"rating\": 7.8,\r\n  \"genres\": [\"Action\", \"Adventure\"],\r\n  \"episodes\": 25,\r\n  \"studio\": \"C2C\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/media",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET semua media",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET cari judul",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET filter jenis",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET top rating",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET detail media + relasi",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST tambah anime (berhasil)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"type\":\"anime\",\"title\":\"Chainsaw Man Part 2\",\"release_year\":2024,\"rating\":9.0,\"genres\":[\"Action\",\"Horror\"],\"episodes\":12,\"studio\":\"MAPPA\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/media",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST tambah light novel (berhasil)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"light_novel\",\r\n  \"title\": \"Re:Zero\",\r\n  \"release_year\": 2014,\r\n  \"rating\": 8.3,\r\n  \"genres\": [\"Fantasy\", \"Isekai\"],\r\n  \"author\": \"Tappei Nagatsuki\",\r\n  \"chapters\": 200,\r\n  \"volumes\": 38\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/media",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST judul sama tapi jenis beda (berhasil)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"manga\",\r\n  \"title\": \"Chainsaw Man\",\r\n  \"release_year\": 2018,\r\n  \"rating\": 8.7,\r\n  \"author\": \"Tatsuki Fujimoto\",\r\n  \"chapters\": 200,\r\n  \"is_ongoing\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/media",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST GAGAL: judul kosong",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"anime\",\r\n  \"title\": \"\",\r\n  \"release_year\": 2022,\r\n  \"rating\": 8,\r\n  \"episodes\": 12,\r\n  \"studio\": \"MAPPA\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST GAGAL: judul + jenis duplikat",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"anime\",\r\n  \"title\": \"Jujutsu Kaisen\",\r\n  \"release_year\": 2020,\r\n  \"rating\": 8.6,\r\n  \"episodes\": 47,\r\n  \"studio\": \"MAPPA\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST GAGAL: rating lebih dari 10 dan studio kosong",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"anime\",\r\n  \"title\": \"Test Anime\",\r\n  \"release_year\": 2024,\r\n  \"rating\": 11,\r\n  \"episodes\": 12\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/media",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH update media (berhasil)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/media/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH GAGAL: ganti judul jadi duplikat",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"title\": \"Jujutsu Kaisen\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/media/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE media",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/media/12",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "media",
+                "12"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET GAGAL: media tidak ada",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "B. Koleksi (Custom Action)",
+      "item": [
+        {
+          "name": "GET semua pengguna",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET pengguna + koleksi",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET koleksi saja",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST tambah media ke koleksi (berhasil)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"media_id\": 11 }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/2/collection",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "collection"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST GAGAL: media yang sama dua kali",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST GAGAL: media tidak ada",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"media_id\": 999 }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/2/collection",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "collection"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH update progres (berhasil)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"progress\": 6 }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/2/collection/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "collection",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH GAGAL: progres melebihi total",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"progress\": 50 }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/2/collection/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "collection",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET cek relasi dari sisi media",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE hapus dari koleksi (berhasil)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/2/collection/11",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "collection",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE GAGAL: media sudah tidak ada di koleksi",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "DELETE {{base_url}}/users/2/collection/11",
+              "host": [
+                "DELETE {{base_url}}"
+              ],
+              "path": [
+                "users",
+                "2",
+                "collection",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
